@@ -1,0 +1,4 @@
+{
+  "_comment": "Source of truth for holidays is src/infrastructure/data/holidays/hk-public-holidays.ts (TypeScript). This file is a reference placeholder and is not read by the application.",
+  "holidays": []
+}

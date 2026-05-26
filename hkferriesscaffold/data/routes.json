@@ -1,0 +1,4 @@
+{
+  "_comment": "Source of truth for routes is src/infrastructure/data/routes/index.ts (TypeScript). This file is a reference placeholder and is not read by the application.",
+  "routes": []
+}

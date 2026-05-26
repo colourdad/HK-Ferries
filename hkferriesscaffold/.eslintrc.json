@@ -1,0 +1,43 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["@infrastructure/*", "../infrastructure/*", "../../infrastructure/*"],
+            "importNames": [],
+            "message": "Domain layer must not import from infrastructure. Use ports (interfaces) instead."
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/domain/**/*"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["react", "react-dom", "next", "next/*"],
+                "message": "Domain layer must not depend on React or Next.js."
+              },
+              {
+                "group": ["@infrastructure/*", "../infrastructure/*"],
+                "message": "Domain layer must not import from infrastructure."
+              },
+              {
+                "group": ["@components/*", "../components/*"],
+                "message": "Domain layer must not import from components."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
